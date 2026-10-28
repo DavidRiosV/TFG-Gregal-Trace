@@ -1,0 +1,8 @@
+myvenv/
+__pycache__/
+*.pyc
+db.sqlite3
+.vscode/
+/static/
+.env
+gestion/fixtures/usuarios.json

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1E3B14">
+    <title>{% block titulo %}Gregal Trace{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}?v=2">
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <div class="app">
+        {% include "gestion/menu.html" %}
+
+        <div class="app__zona">
+            {% include "gestion/cabecera.html" %}
+
+            <main class="contenido" id="contenido">
+                {% block contenido %}{% endblock %}
+            </main>
+
+            {% block pie %}{% include "gestion/pie.html" %}{% endblock %}
+        </div>
+    </div>
+
+    {% include "gestion/menu_movil.html" %}
+</body>
+</html>
